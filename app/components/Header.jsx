@@ -52,7 +52,7 @@ export default function Header() {
     <header className="z-20 relative sticky top-0 flex justify-between bg-[#F7FEFF]/95 px-4 md:justify-around items-center h-20">
       <div
         ref={arrowRef}
-        className="hidden md:flex arrow absolute -bottom-2 -left-2 w-14 h-14 bg-[url('/arrow.png')] bg-contain bg-no-repeat bg-center transition-all duration-300 ease-in-out"
+        className="hidden md:flex arrow absolute -bottom-2 left-80 w-14 h-14 bg-[url('/arrow.png')] bg-contain bg-no-repeat bg-center transition-all duration-300 ease-in-out"
       ></div>
       <Link href="/" className="flex items-center gap-4">
         <Image src={logo} alt="" width={40} height={40} />
@@ -84,7 +84,7 @@ export default function Header() {
               onMouseEnter={handleMouseEnter}
               onClick={handleClick}
             >
-              <Link className="border-b-4 border-transparent" href="#">
+              <Link className="border-b-4 border-transparent" href="/concours">
                 concours
               </Link>
             </li>

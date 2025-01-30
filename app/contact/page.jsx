@@ -1,12 +1,11 @@
 import Header from '../components/Header'
-import Image from 'next/image'
 
-export default function Home() {
+export default function Contact() {
   return (
     <>
       <Header />
       <main>
-        <div className="w-full h-48 md:h-96 bg-[url('/arrows.jpg')] bg-cover bg-center text-3xl flex justify-center items-center">
+        <div className="w-full h-48 md:h-96 bg-[url('/arrows2.jpg')] bg-cover bg-center text-3xl flex justify-center items-center">
           <h1 className="bg-sky-50/60 m-8 p-2 w-max text-2xl md:text-3xl">
             Venez nous rendre visite !
           </h1>
