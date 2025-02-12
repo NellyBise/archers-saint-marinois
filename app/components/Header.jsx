@@ -4,11 +4,13 @@ import Image from 'next/image'
 import logo from '../src/logo.jpg'
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeLink, setActiveLink] = useState(null)
   const arrowRef = useRef(null)
+  const pathname = usePathname()
 
   function toggle() {
     if (window.innerWidth <= 768) {
@@ -46,22 +48,23 @@ export default function Header() {
     const link = e.target.getBoundingClientRect()
     const arrow = arrowRef.current
     arrow.style.left = `${link.left}px`
+    toggle()
   }
 
   return (
-    <header className="z-20 relative sticky top-0 flex justify-between bg-[#F7FEFF]/95 px-4 md:justify-around items-center h-20">
+    <header className="z-30 relative sticky top-0 flex justify-between bg-sky-400/95 px-4 md:justify-around items-center h-20">
       <div
         ref={arrowRef}
         className="hidden md:flex arrow absolute -bottom-2 left-80 w-14 h-14 bg-[url('/arrow.png')] bg-contain bg-no-repeat bg-center transition-all duration-300 ease-in-out"
       ></div>
       <Link href="/" className="flex items-center gap-4">
         <Image src={logo} alt="" width={40} height={40} />
-        <p className="text-xl text-blue-500 font-bold uppercase">
+        <p className="text-xl font-bold uppercase">
           Les Archers Saint Marinois
         </p>
       </Link>
       <div
-        className={` absolute md:flex md:static md:h-20 md:w-max md:bg-transparent fixed left-0 top-20 w-full h-max shadow-xl md:shadow-none bg-[#F7FEFF] rounded-b-xl overflow-hidden transition-all duration-300 ease-in-out ${
+        className={` absolute md:flex md:static md:h-20 md:w-max md:bg-transparent fixed left-0 top-20 w-full h-max shadow-xl md:shadow-none bg-sky-400 rounded-b-xl overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
         }`}
       >
@@ -71,39 +74,59 @@ export default function Header() {
         >
           <ul className="space-y-16 text-center text-lg md:flex md:items-center md:space-y-0 md:space-x-8">
             <li
-              className="hover:text-blue-700 duration-300 ease-in-out"
+              className="hover:text-white duration-300 ease-in-out"
               onMouseEnter={handleMouseEnter}
               onClick={handleClick}
             >
-              <Link className="border-b-4 border-transparent" href="/les-cours">
-                horaires et tarifs
+              <Link
+                className={`border-b-4 border-transparent ${
+                  pathname === '/les-cours' ? 'text-white ' : ''
+                }`}
+                href="/les-cours"
+              >
+                Nos cours
               </Link>
             </li>
             <li
-              className="hover:text-blue-700 duration-300 ease-in-out"
+              className="hover:text-white duration-300 ease-in-out"
               onMouseEnter={handleMouseEnter}
               onClick={handleClick}
             >
-              <Link className="border-b-4 border-transparent" href="/concours">
-                concours
+              <Link
+                className={`border-b-4 border-transparent ${
+                  pathname === '/concours' ? 'text-white ' : ''
+                }`}
+                href="/concours"
+              >
+                Concours
               </Link>
             </li>
             <li
-              className="hover:text-blue-700 duration-300 ease-in-out"
+              className="hover:text-white duration-300 ease-in-out"
               onMouseEnter={handleMouseEnter}
               onClick={handleClick}
             >
-              <Link className="border-b-4 border-transparent" href="#">
-                galerie
+              <Link
+                className={`border-b-4 border-transparent ${
+                  pathname === '/initiations-tir-arc-ete' ? 'text-white ' : ''
+                }`}
+                href="initiations-tir-arc-ete"
+              >
+                Initiations d’été
               </Link>
             </li>
             <li
-              className="hover:text-blue-700 duration-300 ease-in-out"
+              className="hover:text-white duration-300 ease-in-out"
               onMouseEnter={handleMouseEnter}
               onClick={handleClick}
             >
-              <Link className="border-b-4 border-transparent" href="/contact">
-                contact
+              <Link
+                className={`border-b-4 border-transparent ${
+                  pathname === '/contact' ? 'text-white ' : ''
+                }`}
+                href="/contact"
+              >
+                Contactez-nous
               </Link>
             </li>
           </ul>

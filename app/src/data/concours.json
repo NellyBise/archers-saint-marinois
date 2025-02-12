@@ -2,7 +2,7 @@
   "adultes": [
     {
       "date": "13 octobre 2024",
-      "location": "Les Archers les Albères à Perpignan",
+      "location": "Perpignan (Les Archers des Albères)",
       "_id": "a01"
     },
     {
@@ -54,6 +54,11 @@
       "date": "15 et 16 février 2025",
       "location": "Auch",
       "_id": "a09"
+    },
+    {
+      "date": "5 avril 2025",
+      "location": "Sainte Marie la Mer",
+      "_id": "a10"
     }
   ],
   "jeunes": [
