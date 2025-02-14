@@ -11,8 +11,18 @@ const poppins = Poppins({
 })
 
 export const metadata = {
-  title: 'Les Archers Saint Marinois',
-  description: 'le site du club des archers de Sainte Marie la Mer',
+  authors: [{ name: 'Nelly Bise', url: 'https://www.nelly-bise.fr' }],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: 'Les Archers Saint Marinois',
+    description: 'Le site du club des archers de Sainte Marie la Mer',
+    url: 'https://www.archers-saintmarinois.fr',
+    image: 'https://www.archers-saintmarinois.fr/image.webp',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({ children }) {
