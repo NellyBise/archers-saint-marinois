@@ -1,4 +1,4 @@
-import { Poppins } from 'next/font/google'
+import { Poppins, Pirata_One } from 'next/font/google'
 import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -6,6 +6,13 @@ import Footer from './components/Footer'
 const poppins = Poppins({
   weight: ['400', '600'],
   style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
+})
+
+const pirata = Pirata_One({
+  weight: ['400'],
+  style: ['normal'],
   subsets: ['latin'],
   display: 'swap',
 })

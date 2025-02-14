@@ -28,9 +28,9 @@ export default function Initiations() {
         </p>
       </div>
 
-      <section className="gap-8 px-8 py-12 md:py-16 max-w-[1440px] mx-auto">
+      <section className="gap-8 px-4 md:px-8 py-12 md:py-16 max-w-[1440px] mx-auto">
         <article>
-          <h1 className="text-2xl md:text-3xl text-blue-800 font-bold flex justify-center">
+          <h1 className="text-2xl md:text-3xl text-blue-800 font-bold flex justify-center text-center">
             Initiations estivales au tir à l’arc à Sainte Marie la Mer
           </h1>
           <p className="text-lg md:text-xl text-center py-8">
@@ -44,7 +44,7 @@ export default function Initiations() {
               ans d’expérience
             </div>
             <div className="flex flex-col items-center justify-center bg-gradient-to-br from-red-100 to-red-200 shadow-lg rounded-full size-36 md:size-48">
-              <Number count="10" />
+              <Number count="8" />
               cibles
             </div>
             <div className="flex flex-col items-center justify-center bg-gradient-to-br from-sky-100 to-sky-200 shadow-lg rounded-full size-36 md:size-48">
@@ -74,10 +74,10 @@ export default function Initiations() {
             transition={{ duration: 0.5 }}
             className="w-full md:w-1/2 flex flex-col justify-center"
           >
-            <h2 className="text-xl md:text-2xl font-bold text-blue-800 mb-4">
+            <h2 className="text-xl md:text-2xl font-bold text-blue-800 mb-4 text-center md:text-left">
               Une activité familiale et accessible à tous
             </h2>
-            <div className="text-lg md:text-xl mb-4 flex flex-col gap-2">
+            <div className="text-lg md:text-xl mb-4 flex flex-col gap-4">
               <p>
                 Que vous soyez résident du camping ou non, profitez de cette
                 activité en plein air pour tester votre précision et votre

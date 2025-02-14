@@ -1,8 +1,44 @@
-import target from '../src/target.png'
-import Image from 'next/image'
+'use client'
+
 import Link from 'next/link'
+import ClassCard from '../components/ClassCard'
 
 export default function Cours() {
+  const categories = [
+    {
+      title: 'Les poussins',
+      age: 'de 7 à 10 ans',
+      times: ['Le mardi de 18h à 19h', 'Le samedi de 10h à 11h'],
+      fee: '100€',
+      bgFrom: 'from-sky-100',
+      bgTo: 'to-sky-200',
+      textColor: 'text-blue-800',
+    },
+    {
+      title: 'Les jeunes archers',
+      age: 'de 11 à 20 ans',
+      times: ['Le mardi de 19h à 20h', 'Le samedi de 11h à 12h'],
+      fee: '100€',
+      bgFrom: 'from-amber-100',
+      bgTo: 'to-amber-200',
+      textColor: 'text-amber-900',
+    },
+    {
+      title: 'Les adultes',
+      age: '',
+      times: [
+        'Le mardi de 20h à 21h',
+        'Le mercredi de 20h à 21h',
+        'Le vendredi de 20h15 à 22h',
+      ],
+      extra: 'La salle est également disponible le samedi à partir de 16h',
+      fee: '130€',
+      bgFrom: 'from-red-100',
+      bgTo: 'to-red-200',
+      textColor: 'text-red-900',
+    },
+  ]
+
   return (
     <main>
       <div className="w-full h-40 md:h-64 bg-[url('/target3.jpg')] bg-cover bg-center text-3xl flex justify-center items-center">
@@ -10,7 +46,7 @@ export default function Cours() {
           Les cours
         </p>
       </div>
-      <section className="flex flex-col gap-8 px-8 py-12 md:py-16 max-w-[1440px] mx-auto">
+      <section className="flex flex-col gap-8 px-4 md:px-8 py-12 md:py-16 max-w-[1440px] mx-auto">
         <h1 className="text-2xl md:text-3xl text-blue-800 font-bold flex justify-center text-center">
           Apprenez le tir à l’arc avec nous !
         </h1>
@@ -25,111 +61,10 @@ export default function Cours() {
           conviviale.
         </p>
       </section>
-      <section className="flex flex-col md:flex-row gap-12 p-8 md:p-12 text-base md:text-lg max-w-[1440px] mx-auto">
-        <article className="bg-gradient-to-br from-sky-100 to-sky-200 shadow-lg w-full rounded-xl text-center flex flex-col justify-center gap-8 p-8">
-          <div>
-            <h2 className="text-xl md:text-2xl font-bold text-blue-800">
-              Les poussins
-            </h2>
-            <p>de 7 à 10 ans</p>
-          </div>
-          <ul className="flex flex-col items-center">
-            <li className="flex gap-2">
-              <Image
-                src={target}
-                alt=""
-                width={18}
-                height={18}
-                style={{ objectFit: 'contain' }}
-              />
-              Le mardi de 18h à 19h
-            </li>
-            <li className="flex gap-2">
-              <Image
-                src={target}
-                alt=""
-                width={18}
-                height={18}
-                style={{ objectFit: 'contain' }}
-              />
-              Le samedi de 10h à 11h
-            </li>
-          </ul>
-          <p>Cotisation + licence : 100€</p>
-        </article>
-        <article className="bg-gradient-to-br from-amber-100 to-amber-200 shadow-lg w-full rounded-xl text-center flex flex-col justify-center gap-8 p-8">
-          <div>
-            {' '}
-            <h2 className="text-xl md:text-2xl font-bold text-amber-900">
-              Les jeunes archers
-            </h2>
-            <p>de 11 à 20 ans</p>
-          </div>
-          <ul className="flex flex-col items-center">
-            <li className="flex gap-2">
-              <Image
-                src={target}
-                alt=""
-                width={18}
-                height={18}
-                style={{ objectFit: 'contain' }}
-              />
-              Le mardi de 19h à 20h
-            </li>
-            <li className="flex gap-2">
-              <Image
-                src={target}
-                alt=""
-                width={18}
-                height={18}
-                style={{ objectFit: 'contain' }}
-              />
-              Le samedi de 11h à 12h
-            </li>
-          </ul>
-          <p>Cotisation + licence : 100€</p>
-        </article>
-        <article className="bg-gradient-to-br from-red-100 to-red-200 shadow-lg w-full rounded-xl text-center flex flex-col justify-center gap-8 p-8">
-          <div>
-            <h2 className="text-xl md:text-2xl font-bold text-red-900">
-              Les adultes
-            </h2>
-          </div>
-          <ul className="flex flex-col items-center">
-            <li className="flex gap-2">
-              <Image
-                src={target}
-                alt=""
-                width={18}
-                height={18}
-                style={{ objectFit: 'contain' }}
-              />
-              Le mardi de 20h à 21h
-            </li>
-            <li className="flex gap-2">
-              <Image
-                src={target}
-                alt=""
-                width={18}
-                height={18}
-                style={{ objectFit: 'contain' }}
-              />
-              Le mercredi de 20h à 21h
-            </li>
-            <li className="flex gap-2">
-              <Image
-                src={target}
-                alt=""
-                width={18}
-                height={18}
-                style={{ objectFit: 'contain' }}
-              />
-              Le vendredi de 20h15 à 22h
-            </li>
-          </ul>
-          <p>La salle est également disponible le samedi à partir de 16h</p>
-          <p>Cotisation + licence : 130€</p>
-        </article>
+      <section className="flex flex-col md:flex-row gap-12 p-4 md:p-12 text-base md:text-lg max-w-[1440px] mx-auto">
+        {categories.map((cat) => (
+          <ClassCard cat={cat} key={cat.title} />
+        ))}
       </section>
       <section className="flex flex-col gap-8 md:gap-12 px-8 py-12 md:py-16 mb-12 max-w-[1440px] mx-auto">
         <h2 className="text-xl md:text-2xl text-blue-800 font-bold flex justify-center text-center">

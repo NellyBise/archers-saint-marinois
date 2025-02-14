@@ -8,7 +8,7 @@ export default function Contact() {
           Venez nous rendre visite !
         </p>
       </div>
-      <div className="z-10 relative flex flex-col items-center gap-8 px-8 py-12 md:py-16">
+      <div className="z-10 relative flex flex-col items-center gap-8 px-4 md:px-8 py-12 md:py-16">
         <h1 className="text-2xl md:text-3xl text-blue-800 font-bold flex justify-center text-center">
           Les Archers Saint-Marinois vous accueillent à Sainte-Marie-la-Mer
         </h1>

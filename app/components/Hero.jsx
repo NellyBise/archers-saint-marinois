@@ -46,7 +46,7 @@ export default function Hero() {
 
           <p>
             Envie de tester un sport à la fois technique, accessible et
-            passionnant ? Le tir à l’arc est une discipline qui allie
+            passionnant&nbsp;? Le tir à l’arc est une discipline qui allie
             concentration, maîtrise de soi et plaisir du jeu. Que vous soyez
             débutant ou confirmé, le club des Archers Saint-Marinois vous
             accueille à Sainte-Marie-la-Mer pour partager cette passion dans une
@@ -73,7 +73,7 @@ export default function Hero() {
             <p>
               Que vous souhaitiez découvrir le tir à l’arc, vous entraîner
               régulièrement ou participer à des compétitions, notre club est
-              fait pour vous ! Nous proposons :
+              fait pour vous ! Nous proposons&nbsp;:
             </p>
 
             <ul className="flex flex-col gap-2 pl-4">
@@ -96,7 +96,7 @@ export default function Hero() {
               Une discipline qui vous surprendra{' '}
             </h2>
             <p>
-              Le tir à l’arc est bien plus qu’un simple sport : c’est un
+              Le tir à l’arc est bien plus qu’un simple sport&nbsp;: c’est un
               véritable défi personnel qui développe la précision, la gestion du
               stress et la concentration. Accessible dès le plus jeune âge, il
               permet aussi de se détendre, se surpasser et partager un moment
@@ -107,7 +107,7 @@ export default function Hero() {
               className="bg-blue-800 text-white font-bold px-4 py-2 rounded w-max flex gap-4 items-center self-center duration-150 hover:scale-105"
               href="/contact"
             >
-              Contactez-nous !
+              Contactez-nous&nbsp;!
             </Link>
           </div>
           <Image

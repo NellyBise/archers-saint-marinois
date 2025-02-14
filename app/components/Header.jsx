@@ -1,10 +1,18 @@
 'use client'
 
 import Image from 'next/image'
-import logo from '../src/logo.jpg'
+import logo from '../src/logo.png'
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { Pirata_One } from 'next/font/google'
+
+const pirata = Pirata_One({
+  weight: ['400'],
+  style: ['normal'],
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -57,9 +65,11 @@ export default function Header() {
         ref={arrowRef}
         className="hidden md:flex arrow absolute -bottom-2 left-80 w-14 h-14 bg-[url('/arrow.png')] bg-contain bg-no-repeat bg-center transition-all duration-300 ease-in-out"
       ></div>
-      <Link href="/" className="flex items-center gap-4">
-        <Image src={logo} alt="" width={40} height={40} />
-        <p className="text-xl font-bold uppercase">
+      <Link href="/" className="flex items-center gap-3">
+        <Image src={logo} alt="" width={60} height={60} />
+        <p
+          className={`${pirata.className} text-xl md:text-3xl font-bold text-white tracking-wide`}
+        >
           Les Archers Saint Marinois
         </p>
       </Link>

@@ -1,15 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import logo from '../src/logo.jpg'
+import logo from '../src/logo.png'
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-700 text-white">
+    <footer className="bg-slate-700 text-white text-sm md:text-base">
       {/* Section principale */}
-      <section className="flex flex-col md:flex-row gap-8 justify-around p-8">
+      <section className="flex flex-col md:flex-row gap-8 justify-around p-4 md:p-8">
         {/* Logo et adresse */}
         <article className="flex items-center gap-4">
-          <Image src={logo} alt="Logo" width={60} height={60} />
+          <Image src={logo} alt="Logo" width={70} height={70} />
           <div>
             <Link href="/contact">
               <p className="font-bold text-sky-200">
@@ -68,7 +68,7 @@ export default function Footer() {
       </section>
 
       {/* Bas de page avec crédit */}
-      <div className="text-center text-sm p-4">
+      <div className="text-center text-xs md:text-sm p-4">
         <p>
           © {new Date().getFullYear()} Les Archers Saint Marinois. Site conçu
           par{' '}

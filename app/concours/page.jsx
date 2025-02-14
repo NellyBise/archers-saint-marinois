@@ -18,9 +18,13 @@ const variantsright = {
 export default function Concours() {
   const ref = useRef(null)
   const ref2 = useRef(null)
+  const ref3 = useRef(null)
+  const ref4 = useRef(null)
 
   const isInView = useInView(ref, { once: true })
   const isInView2 = useInView(ref2, { once: true })
+  const isInView3 = useInView(ref3, { once: true })
+  const isInView4 = useInView(ref4, { once: true })
 
   return (
     <main>
@@ -30,7 +34,7 @@ export default function Concours() {
         </p>
       </div>
 
-      <section className="gap-8 px-8 py-12 md:py-16 max-w-[1440px] mx-auto">
+      <section className="gap-8 px-4 md:px-8 py-12 md:py-16 max-w-[1440px] mx-auto">
         <h1 className="text-2xl md:text-3xl text-blue-800 font-bold flex justify-center text-center">
           Retrouvez les informations sur les concours
         </h1>
@@ -55,8 +59,8 @@ export default function Concours() {
           </motion.div>
           <motion.div
             variants={variantsright}
-            ref={ref}
-            animate={isInView ? 'visible' : 'hidden'}
+            ref={ref2}
+            animate={isInView2 ? 'visible' : 'hidden'}
             transition={{ duration: 0.6 }}
             className="w-full md:w-1/2 flex flex-col justify-center"
           >
@@ -101,18 +105,18 @@ export default function Concours() {
           <div className="flex flex-col md:flex-row gap-12 text-lg">
             <motion.div
               variants={variantsleft}
-              ref={ref2}
-              animate={isInView2 ? 'visible' : 'hidden'}
+              ref={ref3}
+              animate={isInView3 ? 'visible' : 'hidden'}
               transition={{ duration: 0.6 }}
               className="bg-gradient-to-br from-sky-100 to-sky-200 shadow-lg w-full rounded-xl text-center flex flex-col justify-center gap-8 py-8 px-2 md:px-8"
             >
               <h3 className="text-xl text-blue-800 font-semibold mb-2">
                 Concours pour les Jeunes Archers
               </h3>
-              <ul className="list-disc list-inside flex flex-col gap-1 text-base md:text-lg">
+              <ul className="list-disc list-inside flex flex-col gap-2 text-base md:text-lg">
                 {concours.jeunes &&
                   concours.jeunes.map((concoursj) => (
-                    <li key={concoursj._id} className="mb-1">
+                    <li key={concoursj._id}>
                       {concoursj.date} – {concoursj.location}
                     </li>
                   ))}
@@ -120,18 +124,18 @@ export default function Concours() {
             </motion.div>
             <motion.div
               variants={variantsright}
-              ref={ref2}
-              animate={isInView2 ? 'visible' : 'hidden'}
+              ref={ref4}
+              animate={isInView4 ? 'visible' : 'hidden'}
               transition={{ duration: 0.6 }}
               className="bg-gradient-to-br from-red-100 to-red-200 shadow-lg w-full rounded-xl text-center flex flex-col justify-center gap-8 py-8 px-2 md:px-8"
             >
               <h3 className="text-xl text-red-900 font-semibold mb-2">
                 Concours pour les Adultes
               </h3>
-              <ul className="list-disc list-inside flex flex-col gap-1 text-base md:text-lg">
+              <ul className="list-disc list-inside flex flex-col gap-2 text-base md:text-lg">
                 {concours.adultes &&
                   concours.adultes.map((concoursa) => (
-                    <li key={concoursa._id} className="mb-1">
+                    <li key={concoursa._id}>
                       {concoursa.date} – {concoursa.location}
                     </li>
                   ))}
